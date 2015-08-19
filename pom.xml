@@ -5,4 +5,11 @@
   <version>0.0.1-SNAPSHOT</version>
   <name>MathematicalOperations</name>
   <description>Mathematical Operations Simple Maven Project</description>
+  <dependencies>
+  <dependency>
+	<groupId>com.google.guava</groupId>
+	<artifactId>guava</artifactId>
+	<version>18.0</version>
+</dependency>
+  </dependencies>
 </project>
