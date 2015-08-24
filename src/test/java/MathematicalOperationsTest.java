@@ -1,8 +1,5 @@
-import static org.junit.Assert.*;
-
+import org.junit.Assert;
 import org.junit.Test;
-
-import junit.framework.Assert;
 
 public class MathematicalOperationsTest {
 
@@ -51,5 +48,43 @@ public class MathematicalOperationsTest {
 		// then
 		Assert.assertEquals(6.0, result);
 	}
+	
+	
+	@Test
+	public void testSubstractionPositive(){
+		//given
+		MathematicalOperations mo = new MathematicalOperations();
+		//when
+		int result = mo.substraction(10, 9);
+		//then
+		Assert.assertEquals(result, 1);
+	}
+	
+	@Test
+	public void testSubstractionNegative(){
+		//given
+		MathematicalOperations mo = new MathematicalOperations();
+		//when
+		int result = mo.substraction(9, 10);
+		//then
+		Assert.assertEquals(result, -1);
+	}
+	
+	@Test(expected=ArithmeticException.class)
+	public void testSubstractionWithOverflow(){
+		//given
+		MathematicalOperations mo = new MathematicalOperations();
+		//when then
+		mo.substraction(Integer.MAX_VALUE, -1);
+	}
+	
+	@Test(expected=ArithmeticException.class)
+	public void testSubstractionWithUnderflow(){
+		//given
+		MathematicalOperations mo = new MathematicalOperations();
+		//when then
+		mo.substraction(Integer.MIN_VALUE, 1);
+	}
+	
 
 }
